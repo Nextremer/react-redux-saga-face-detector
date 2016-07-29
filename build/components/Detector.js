@@ -39,7 +39,7 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
   _createClass(Detector, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      (0, _actions.faceDetectorSetup)({ videoTag: this.videoTag });
+      this.props.faceDetectorSetup({ videoTag: this.videoTag });
     }
   }, {
     key: 'render',
