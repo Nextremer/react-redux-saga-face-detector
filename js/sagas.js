@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import { takeEvery, eventChannel } from 'redux-saga';
 import { fork, call, take, put, select } from 'redux-saga/effects';
 import * as actions from './actions';
