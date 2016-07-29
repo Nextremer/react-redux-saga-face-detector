@@ -35,8 +35,8 @@ function subscribe( socket ) {
     socket.on('ready', payload => {
       emit( actions.faceDetectorReady( payload ) );
     });
-    socket.on('detect', payload => {
-      emit( actions.facedetected( payload ) );
+    socket.on('detected', payload => {
+      emit( actions.faceDetected( payload ) );
     });
     socket.on('interim report', payload => {
       emit( actions.faceInterimReport( payload ) );

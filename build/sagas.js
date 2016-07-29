@@ -143,8 +143,8 @@ function subscribe(socket) {
     socket.on('ready', function (payload) {
       emit(actions.faceDetectorReady(payload));
     });
-    socket.on('detect', function (payload) {
-      emit(actions.facedetected(payload));
+    socket.on('detected', function (payload) {
+      emit(actions.faceDetected(payload));
     });
     socket.on('interim report', function (payload) {
       emit(actions.faceInterimReport(payload));
