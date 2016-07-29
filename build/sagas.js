@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.registerHandler = registerHandler;
 exports.faceDetectorRootSaga = faceDetectorRootSaga;
 
+require('babel-polyfill');
+
 var _reduxSaga = require('redux-saga');
 
 var _effects = require('redux-saga/effects');
