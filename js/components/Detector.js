@@ -11,7 +11,7 @@ export default class Detector extends Component {
   }
 
   componentDidMount() {
-    faceDetectorSetup({ videoTag: this.videoTag });
+    this.props.faceDetectorSetup({ videoTag: this.videoTag });
   }
 
   render() {
