@@ -20,6 +20,7 @@ export default class Detector extends Component {
         width="400"
         height="300"
         ref={ ref => this.videoTag = ref }
+        style="display:none;"
       ></video>
     );
   }

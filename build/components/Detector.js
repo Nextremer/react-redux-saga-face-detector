@@ -51,7 +51,8 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
         height: '300',
         ref: function ref(_ref) {
           return _this2.videoTag = _ref;
-        }
+        },
+        style: 'display:none;'
       });
     }
   }]);
