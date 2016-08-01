@@ -1,12 +1,12 @@
 {
   "name": "react-redux-saga-face-detector",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Face Detector for React Redux(with redux-saga)",
   "main": "build/index.js",
   "scripts": {
     "build": "`npm bin`/babel js -d build"
   },
-  "author": "Nextremer",
+  "author": "kentaro.tada@nextremer.com",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.11.4",
@@ -20,7 +20,7 @@
     "babel-preset-stage-2": "^6.11.0",
     "babel-register": "^6.11.6",
     "babel-runtime": "^6.11.6",
-    "face-detector": "github:nextremer/face-detector",
+    "face-detector": "github:nextremer/face-detector#v0.1.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-actions": "^0.10.1",
