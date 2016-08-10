@@ -21,7 +21,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var _marked = [setupDetectorHandler, setupDetectorWatcher, startDetectHandler, startDetectWatcher, stopDetectHandler, stopDetectWatcher, registerHandler, faceDetectorRootSaga].map(regeneratorRuntime.mark);
 
 function setupDetectorHandler(_ref) {
-  var videoTag = _ref.payload.videoTag;
+  var _ref$payload = _ref.payload;
+  var videoTag = _ref$payload.videoTag;
+  var canvasTag = _ref$payload.canvasTag;
   var detector;
   return regeneratorRuntime.wrap(function setupDetectorHandler$(_context) {
     while (1) {
@@ -35,7 +37,7 @@ function setupDetectorHandler(_ref) {
         case 2:
           detector = _context.sent;
 
-          detector.setup(videoTag);
+          detector.setup(videoTag, canvasTag);
 
         case 4:
         case 'end':

@@ -39,21 +39,32 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
   _createClass(Detector, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.faceDetectorSetup({ videoTag: this.videoTag });
+      this.props.faceDetectorSetup({ videoTag: this.videoTag, canvasTag: this.canvasTag });
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement('video', {
-        width: '400',
-        height: '300',
-        ref: function ref(_ref) {
-          return _this2.videoTag = _ref;
-        },
-        style: { display: 'none' }
-      });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('video', {
+          width: '400',
+          height: '300',
+          ref: function ref(_ref) {
+            return _this2.videoTag = _ref;
+          },
+          style: { display: 'none' }
+        }),
+        _react2.default.createElement('canvas', {
+          width: '400',
+          height: '300',
+          ref: function ref(_ref2) {
+            return _this2.canvasTag = _ref2;
+          }
+        })
+      );
     }
   }]);
 

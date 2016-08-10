@@ -11,17 +11,24 @@ export default class Detector extends Component {
   }
 
   componentDidMount() {
-    this.props.faceDetectorSetup({ videoTag: this.videoTag });
+    this.props.faceDetectorSetup({ videoTag: this.videoTag, canvasTag: this.canvasTag });
   }
 
   render() {
     return (
-      <video
-        width="400"
-        height="300"
-        ref={ ref => this.videoTag = ref }
-        style={{ display: 'none' }}
-      ></video>
+      <div>
+        <video
+          width="400"
+          height="300"
+          ref={ ref => this.videoTag = ref }
+          style={{ display: 'none' }}
+        ></video>
+        <canvas
+          width="400"
+          height="300"
+          ref={ ref => this.canvasTag = ref }
+        ></canvas>
+      </div>
     );
   }
 }
