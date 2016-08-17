@@ -35,7 +35,10 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
   function Detector(props) {
     _classCallCheck(this, Detector);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Detector).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detector).call(this, props));
+
+    _this.opts = {};
+    return _this;
   }
 
   _createClass(Detector, [{

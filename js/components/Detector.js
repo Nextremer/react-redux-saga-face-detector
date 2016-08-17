@@ -8,6 +8,7 @@ import {
 export default class Detector extends Component {
   constructor( props ) {
     super( props );
+    this.opts = {};
   }
 
   componentDidMount() {
