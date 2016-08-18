@@ -1,6 +1,6 @@
 {
   "name": "react-redux-saga-face-detector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Face Detector for React Redux(with redux-saga)",
   "main": "build/index.js",
   "scripts": {
