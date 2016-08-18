@@ -3,9 +3,9 @@ import { takeEvery, eventChannel } from 'redux-saga';
 import { fork, call, take, put, select } from 'redux-saga/effects';
 import * as actions from './actions';
 
-function* setupDetectorHandler({ payload: { videoTag } }) {
+function* setupDetectorHandler({ payload: { videoTag, canvasTag } }) {
   const detector = yield select( state => state.faceDetectorReducer.detector );
-  detector.setup( videoTag );
+  detector.setup( videoTag, canvasTag );
 }
 
 function* setupDetectorWatcher() {

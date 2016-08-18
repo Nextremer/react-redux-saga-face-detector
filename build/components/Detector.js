@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -33,27 +35,42 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
   function Detector(props) {
     _classCallCheck(this, Detector);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Detector).call(this, props));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detector).call(this, props));
+
+    _this.opts = {};
+    return _this;
   }
 
   _createClass(Detector, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.faceDetectorSetup({ videoTag: this.videoTag });
+      this.props.faceDetectorSetup(_extends({}, this.opts));
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement('video', {
-        width: '400',
-        height: '300',
-        ref: function ref(_ref) {
-          return _this2.videoTag = _ref;
-        },
-        style: { display: 'none' }
-      });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('video', {
+          width: this.props.width,
+          height: this.props.height,
+          ref: function ref(_ref) {
+            return _this2.opts.videoTag = _ref;
+          },
+          style: { display: 'none' }
+        }),
+        _react2.default.createElement('canvas', {
+          width: this.props.width,
+          height: this.props.height,
+          ref: function ref(_ref2) {
+            return _this2.opts.canvasTag = _ref2;
+          },
+          style: { display: 'none' }
+        })
+      );
     }
   }]);
 
