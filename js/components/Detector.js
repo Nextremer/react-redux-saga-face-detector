@@ -8,7 +8,8 @@ import {
 export default class Detector extends Component {
   constructor( props ) {
     super( props );
-    this.opts = {};
+    const { freq, sizeThreshold, scoreThreshold } = this.props;
+    this.opts = { freq, sizeThreshold, scoreThreshold };
   }
 
   componentDidMount() {
@@ -16,19 +17,20 @@ export default class Detector extends Component {
   }
 
   render() {
+    const display = ( ( 'debug' in this.props ) && this.props.debug ) ? 'inline' : 'none';
     return (
-      <div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
         <video
           width={ this.props.width }
           height={ this.props.height }
-          ref={ ref => this.opts.videoTag = ref }
-          style={{ display: 'none' }}
+          ref={ ref => this.opts = { ...this.opts, videoTag: ref } }
+          style={{ display }}
         ></video>
         <canvas
           width={ this.props.width }
           height={ this.props.height }
-          ref={ ref => this.opts.canvasTag = ref }
-          style={{ display: 'none' }}
+          ref={ ref => this.opts = { ...this.opts, canvasTag: ref } }
+          style={{ display }}
         ></canvas>
       </div>
     );

@@ -1,11 +1,10 @@
-import 'babel-polyfill';
 import { takeEvery, eventChannel } from 'redux-saga';
 import { fork, call, take, put, select } from 'redux-saga/effects';
 import * as actions from './actions';
 
-function* setupDetectorHandler({ payload: { videoTag, canvasTag } }) {
+function* setupDetectorHandler({ payload }) {
   const detector = yield select( state => state.faceDetectorReducer.detector );
-  detector.setup( videoTag, canvasTag );
+  detector.setup( payload );
 }
 
 function* setupDetectorWatcher() {
