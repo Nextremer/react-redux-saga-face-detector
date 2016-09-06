@@ -3,10 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
 exports.registerHandler = registerHandler;
 exports.faceDetectorRootSaga = faceDetectorRootSaga;
-
-require('babel-polyfill');
 
 var _reduxSaga = require('redux-saga');
 
@@ -18,14 +21,14 @@ var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var _marked = [setupDetectorHandler, setupDetectorWatcher, startDetectHandler, startDetectWatcher, stopDetectHandler, stopDetectWatcher, registerHandler, faceDetectorRootSaga].map(regeneratorRuntime.mark);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _marked = [setupDetectorHandler, setupDetectorWatcher, startDetectHandler, startDetectWatcher, stopDetectHandler, stopDetectWatcher, registerHandler, faceDetectorRootSaga].map(_regenerator2.default.mark);
 
 function setupDetectorHandler(_ref) {
-  var _ref$payload = _ref.payload;
-  var videoTag = _ref$payload.videoTag;
-  var canvasTag = _ref$payload.canvasTag;
+  var payload = _ref.payload;
   var detector;
-  return regeneratorRuntime.wrap(function setupDetectorHandler$(_context) {
+  return _regenerator2.default.wrap(function setupDetectorHandler$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
@@ -37,7 +40,7 @@ function setupDetectorHandler(_ref) {
         case 2:
           detector = _context.sent;
 
-          detector.setup(videoTag, canvasTag);
+          detector.setup(payload);
 
         case 4:
         case 'end':
@@ -48,7 +51,7 @@ function setupDetectorHandler(_ref) {
 }
 
 function setupDetectorWatcher() {
-  return regeneratorRuntime.wrap(function setupDetectorWatcher$(_context2) {
+  return _regenerator2.default.wrap(function setupDetectorWatcher$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
@@ -64,7 +67,7 @@ function setupDetectorWatcher() {
 
 function startDetectHandler() {
   var detector;
-  return regeneratorRuntime.wrap(function startDetectHandler$(_context3) {
+  return _regenerator2.default.wrap(function startDetectHandler$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
@@ -87,7 +90,7 @@ function startDetectHandler() {
 }
 
 function startDetectWatcher() {
-  return regeneratorRuntime.wrap(function startDetectWatcher$(_context4) {
+  return _regenerator2.default.wrap(function startDetectWatcher$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
@@ -103,7 +106,7 @@ function startDetectWatcher() {
 
 function stopDetectHandler() {
   var detector;
-  return regeneratorRuntime.wrap(function stopDetectHandler$(_context5) {
+  return _regenerator2.default.wrap(function stopDetectHandler$(_context5) {
     while (1) {
       switch (_context5.prev = _context5.next) {
         case 0:
@@ -126,7 +129,7 @@ function stopDetectHandler() {
 }
 
 function stopDetectWatcher() {
-  return regeneratorRuntime.wrap(function stopDetectWatcher$(_context6) {
+  return _regenerator2.default.wrap(function stopDetectWatcher$(_context6) {
     while (1) {
       switch (_context6.prev = _context6.next) {
         case 0:
@@ -160,7 +163,7 @@ function subscribe(socket) {
 
 function registerHandler(dispatch) {
   var socket, channel, action;
-  return regeneratorRuntime.wrap(function registerHandler$(_context7) {
+  return _regenerator2.default.wrap(function registerHandler$(_context7) {
     while (1) {
       switch (_context7.prev = _context7.next) {
         case 0:
@@ -210,7 +213,7 @@ function registerHandler(dispatch) {
 }
 
 function faceDetectorRootSaga() {
-  return regeneratorRuntime.wrap(function faceDetectorRootSaga$(_context8) {
+  return _regenerator2.default.wrap(function faceDetectorRootSaga$(_context8) {
     while (1) {
       switch (_context8.prev = _context8.next) {
         case 0:
