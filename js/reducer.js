@@ -2,7 +2,7 @@ import * as actions from './actions';
 import FaceDetector from 'face-detector';
 
 const initState = () => {
-  const detector = new FaceDetector({ tracker: 'clmtrackr' });
+  const detector = new FaceDetector();
   return { detector };
 };
 

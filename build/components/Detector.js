@@ -52,11 +52,12 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Detector.__proto__ || (0, _getPrototypeOf2.default)(Detector)).call(this, props));
 
     var _this$props = _this.props;
+    var tracker = _this$props.tracker;
     var freq = _this$props.freq;
     var sizeThreshold = _this$props.sizeThreshold;
     var scoreThreshold = _this$props.scoreThreshold;
 
-    _this.opts = { freq: freq, sizeThreshold: sizeThreshold, scoreThreshold: scoreThreshold };
+    _this.opts = { tracker: tracker, freq: freq, sizeThreshold: sizeThreshold, scoreThreshold: scoreThreshold };
     return _this;
   }
 
@@ -70,25 +71,23 @@ var Detector = (_dec = (0, _reactRedux.connect)(function (state) {
     value: function render() {
       var _this2 = this;
 
-      var display = 'debug' in this.props && this.props.debug ? 'inline' : 'none';
+      var zIndex = 'debug' in this.props && this.props.debug ? 1 : -1;
       return _react2.default.createElement(
         'div',
-        { style: { position: 'relative', zIndex: 1 } },
+        { style: { position: 'absolute', top: 0, left: 0, zIndex: zIndex } },
         _react2.default.createElement('video', {
           width: this.props.width,
           height: this.props.height,
           ref: function ref(_ref) {
             return _this2.opts = (0, _extends3.default)({}, _this2.opts, { videoTag: _ref });
-          },
-          style: { display: display }
+          }
         }),
         _react2.default.createElement('canvas', {
           width: this.props.width,
           height: this.props.height,
           ref: function ref(_ref2) {
             return _this2.opts = (0, _extends3.default)({}, _this2.opts, { canvasTag: _ref2 });
-          },
-          style: { display: display }
+          }
         })
       );
     }
