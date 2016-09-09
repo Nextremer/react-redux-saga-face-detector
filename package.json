@@ -9,7 +9,7 @@
   "author": "kentaro.tada@nextremer.com",
   "license": "MIT",
   "dependencies": {
-    "face-detector": "github:nextremer/face-detector#v0.1.3",
+    "face-detector": "github:nextremer/face-detector#topic-trackingjs",
     "react": "^15.3.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",

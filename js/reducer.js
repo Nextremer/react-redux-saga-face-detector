@@ -1,9 +1,8 @@
 import * as actions from './actions';
-import { models } from 'clmtrackr';
 import FaceDetector from 'face-detector';
 
 const initState = () => {
-  const detector = new FaceDetector({ model: models.pca20Svm });
+  const detector = new FaceDetector();
   return { detector };
 };
 

@@ -9,8 +9,6 @@ var _actions = require('./actions');
 
 var actions = _interopRequireWildcard(_actions);
 
-var _clmtrackr = require('clmtrackr');
-
 var _faceDetector = require('face-detector');
 
 var _faceDetector2 = _interopRequireDefault(_faceDetector);
@@ -20,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var initState = function initState() {
-  var detector = new _faceDetector2.default({ model: _clmtrackr.models.pca20Svm });
+  var detector = new _faceDetector2.default();
   return { detector: detector };
 };
 
